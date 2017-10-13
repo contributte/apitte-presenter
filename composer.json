@@ -1,0 +1,52 @@
+{
+  "name": "apitte/presenter",
+  "description": "ApiPresenter for Nette framework",
+  "keywords": ["nette", "api"],
+  "type": "library",
+  "license": ["MIT"],
+  "homepage": "https://github.com/apitte/presenter",
+  "authors": [
+    {
+      "name": "Milan Felix Sulc",
+      "homepage": "https://f3l1x.io"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=5.6",
+    "nette/application": "^2.4",
+    "nette/http": "^2.4",
+    "apitte/core": "dev-master",
+    "contributte/psr7-http-message": "dev-master"
+  },
+  "require-dev": {
+    "ninjify/qa": "~0.4.0",
+    "ninjify/nunjuck": "~0.2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Apitte\\Presenter\\": "src/"
+    }
+  },
+  "scripts": {
+    "qa": [
+      "linter src tests",
+      "codesniffer src tests"
+    ],
+    "tester": [
+      "tester -s -p php --colors 1 -C tests/cases"
+    ],
+    "coverage": [
+      "tester -s -p php --colors 1 -C -d extension=xdebug.so --coverage ./coverage.xml --coverage-src ./src tests/cases"
+    ],
+    "phpstan-install": [
+      "mkdir -p temp/phpstan",
+      "composer require -d temp/phpstan phpstan/phpstan:0.8.5",
+      "composer require -d temp/phpstan phpstan/phpstan-nette:0.8.3"
+    ],
+    "phpstan": [
+      "temp/phpstan/vendor/bin/phpstan analyse -l 7 -c phpstan.neon src"
+    ]
+  }
+}
