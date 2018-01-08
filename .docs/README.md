@@ -1,4 +1,4 @@
-# Apitte/Core
+# Apitte/Presenter
 
 ## Content
 
@@ -7,7 +7,7 @@
 
 ## Installation
 
-Simpliest way to register this core API library is via [Nette\DI\CompilerExtension](https://api.nette.org/2.4/Nette.DI.CompilerExtension.html).
+Simpliest way to register this presenter extension is via [Nette\DI\CompilerExtension](https://api.nette.org/2.4/Nette.DI.CompilerExtension.html).
 
 ```
 composer require apitte/presenter
