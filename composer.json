@@ -15,7 +15,7 @@
     "php": ">=5.6",
     "nette/application": "~2.4.9",
     "nette/http": "~2.4.7",
-    "apitte/core": "^0.1.0",
+    "apitte/core": "^0.2.0",
     "contributte/psr7-http-message": "^0.3.0"
   },
   "require-dev": {
@@ -46,5 +46,12 @@
     "phpstan": [
       "temp/phpstan/vendor/bin/phpstan analyse -l 7 -c phpstan.neon src"
     ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "branch-alias": {
+      "dev-develop": "0.2.x-dev"
+    }
   }
 }
