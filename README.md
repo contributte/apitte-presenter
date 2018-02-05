@@ -20,11 +20,18 @@
 composer require apitte/presenter
 ```
 
-## Versions
+## Version
 
-| State       | Version | Branch   | PHP      |
-|-------------|---------|----------|----------|
-| stable      | `^0.1`  | `master` | `>= 5.6` |
+| State       | Version      | Branch   | PHP      | Composer                                        |
+|-------------|--------------|----------|----------|-------------------------------------------------|
+| development | `~0.2.0`     | `master` | `>= 5.6` | `minimum-stability: dev`, `prefer-stable: true` |
+| stable      | `~0.1.0`     | `master` | `>= 5.6` |                                                 |
+
+## Overview
+
+- [Installation - how to register a plugin](https://github.com/apitte/presenter/tree/master/.docs#installation)
+- [Configuration - all options](https://github.com/apitte/presenter/tree/master/.docs#configuration)
+- [Usage - controller showtime](https://github.com/apitte/presenter/tree/master/.docs#usage)
 
 ## Maintainers
 

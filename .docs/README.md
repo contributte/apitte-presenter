@@ -7,7 +7,7 @@
 
 ## Installation
 
-Simpliest way to register this presenter extension is via [Nette\DI\CompilerExtension](https://api.nette.org/2.4/Nette.DI.CompilerExtension.html).
+Simpliest way to register this extension is via [Nette\DI\CompilerExtension](https://api.nette.org/2.4/Nette.DI.CompilerExtension.html).
 
 ```
 composer require apitte/presenter
@@ -24,6 +24,8 @@ application:
 
 ### Router
 
+You should prepend `ApiRoute` to your router. Therefor you can reach your API at `<projecc>/api`.s
+
 ```php
 class RouterFactory
 {
@@ -39,5 +41,4 @@ class RouterFactory
 		return $router;
 	}
 }
-
 ```
