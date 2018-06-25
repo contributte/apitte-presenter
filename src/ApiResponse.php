@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Apitte\Presenter;
 
@@ -13,31 +13,19 @@ class ApiResponse implements IResponse
 	/** @var ResponseInterface */
 	private $response;
 
-	/**
-	 * @param ResponseInterface $response
-	 */
 	public function __construct(ResponseInterface $response)
 	{
 		$this->response = $response;
 	}
 
-	/**
-	 * @param IRequest $httpRequest
-	 * @param IHttpResponse $httpResponse
-	 * @return void
-	 */
-	public function send(IRequest $httpRequest, IHttpResponse $httpResponse)
+	public function send(IRequest $httpRequest, IHttpResponse $httpResponse): void
 	{
 		$this->sendStatus($this->response);
 		$this->sendHeaders($this->response);
 		$this->sendBody($this->response);
 	}
 
-	/**
-	 * @param ResponseInterface $response
-	 * @return void
-	 */
-	protected function sendStatus(ResponseInterface $response)
+	protected function sendStatus(ResponseInterface $response): void
 	{
 		$version = $response->getProtocolVersion();
 		$status = $response->getStatusCode();
@@ -45,11 +33,7 @@ class ApiResponse implements IResponse
 		header(sprintf('HTTP/%s %s %s', $version, $status, $phrase));
 	}
 
-	/**
-	 * @param ResponseInterface $response
-	 * @return void
-	 */
-	protected function sendHeaders(ResponseInterface $response)
+	protected function sendHeaders(ResponseInterface $response): void
 	{
 		foreach ($response->getHeaders() as $name => $values) {
 			$this->sendHeader($name, $values);
@@ -57,25 +41,19 @@ class ApiResponse implements IResponse
 	}
 
 	/**
-	 * @param string $name
-	 * @param array $values
-	 * @return void
+	 * @param string[] $values
 	 */
-	protected function sendHeader($name, $values)
+	protected function sendHeader(string $name, array $values): void
 	{
 		$name = str_replace('-', ' ', $name);
 		$name = ucwords($name);
 		$name = str_replace(' ', '-', $name);
 		foreach ($values as $value) {
-			header(sprintf('%s: %s', $name, $value), FALSE);
+			header(sprintf('%s: %s', $name, $value), false);
 		}
 	}
 
-	/**
-	 * @param ResponseInterface $response
-	 * @return void
-	 */
-	protected function sendBody(ResponseInterface $response)
+	protected function sendBody(ResponseInterface $response): void
 	{
 		$stream = $response->getBody();
 		$stream->rewind();

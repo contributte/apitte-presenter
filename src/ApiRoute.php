@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Apitte\Presenter;
 
@@ -7,16 +7,14 @@ use Nette\Application\Routers\Route;
 class ApiRoute extends Route
 {
 
-	const APITTE_MODULE = 'Apitte:Api';
+	public const APITTE_MODULE = 'Apitte:Api';
 
 	/**
-	 * @param string $prefix
 	 * @param mixed[] $metadata
-	 * @param int $flags
 	 */
-	public function __construct($prefix, array $metadata = [], $flags = 0)
+	public function __construct(string $prefix, array $metadata = [], int $flags = 0)
 	{
-		if (empty($metadata)) {
+		if ($metadata === []) {
 			$metadata[Route::PRESENTER_KEY] = self::APITTE_MODULE;
 		}
 		parent::__construct(rtrim($prefix, '/') . '/<path .*>', $metadata, $flags);

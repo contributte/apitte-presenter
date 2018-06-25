@@ -27,13 +27,14 @@ application:
 You should prepend `ApiRoute` to your router. Therefor you can reach your API at `<projecc>/api`.s
 
 ```php
+use Nette\Application\IRouter;
+use Nette\StaticClass;
+
 class RouterFactory
 {
-	use Nette\StaticClass;
-	/**
-	 * @return Nette\Application\IRouter
-	 */
-	public static function createRouter()
+	use StaticClass;
+
+	public static function createRouter(): IRouter
 	{
 		$router = new RouteList;
 		$router[] = new ApiRoute('api');
