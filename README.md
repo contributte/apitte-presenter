@@ -24,8 +24,8 @@ composer require apitte/presenter
 
 | State       | Version      | Branch   | PHP      | Composer                                        |
 |-------------|--------------|----------|----------|-------------------------------------------------|
-| development | `^0.3.0`     | `master` | `>= 5.6` | `minimum-stability: dev`, `prefer-stable: true` |
-| stable      | `^0.2.0`     | `master` | `>= 5.6` |                                                 |
+| development | `^0.4.0`     | `master` | `>= 7.1` | `minimum-stability: dev`, `prefer-stable: true` |
+| stable      | `^0.3.0`     | `master` | `>= 5.6` |                                                 |
 
 ## Overview
 
