@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Tests;
 
@@ -14,10 +14,7 @@ require_once __DIR__ . '/../bootstrap.php';
 class ApiRouteTest extends BaseTestCase
 {
 
-	/**
-	 * @return void
-	 */
-	public function testConstruct()
+	public function testConstruct(): void
 	{
 		$route = new ApiRoute('api');
 		Assert::equal(['presenter' => 'Apitte:Api'], $route->getDefaults());

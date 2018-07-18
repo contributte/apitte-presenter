@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Apitte\Presenter;
 
@@ -20,21 +20,13 @@ class ApiPresenter implements IPresenter
 	/** @var HttpRequest */
 	private $request;
 
-	/**
-	 * @param IDispatcher $dispatcher
-	 * @param HttpRequest $request
-	 */
 	public function __construct(IDispatcher $dispatcher, HttpRequest $request)
 	{
 		$this->dispatcher = $dispatcher;
 		$this->request = $request;
 	}
 
-	/**
-	 * @param Request $request
-	 * @return IResponse
-	 */
-	public function run(Request $request)
+	public function run(Request $request): IResponse
 	{
 		$url = $this->request->getUrl();
 		$url = substr($url->getPath(), strlen($url->getScriptPath()));
