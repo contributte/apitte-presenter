@@ -2,27 +2,27 @@
 
 namespace Apitte\Presenter;
 
-use Apitte\Core\Dispatcher\IDispatcher;
-use Contributte\Psr7\Psr7Response;
+use Apitte\Core\Application\IApplication;
 use Contributte\Psr7\Psr7ServerRequestFactory;
 use Contributte\Psr7\Psr7Uri;
 use Nette\Application\IPresenter;
 use Nette\Application\IResponse;
 use Nette\Application\Request;
+use Nette\Application\Responses\CallbackResponse;
 use Nette\Http\Request as HttpRequest;
 
 class ApiPresenter implements IPresenter
 {
 
-	/** @var IDispatcher */
-	private $dispatcher;
+	/** @var IApplication */
+	private $application;
 
 	/** @var HttpRequest */
 	private $request;
 
-	public function __construct(IDispatcher $dispatcher, HttpRequest $request)
+	public function __construct(IApplication $application, HttpRequest $request)
 	{
-		$this->dispatcher = $dispatcher;
+		$this->application = $application;
 		$this->request = $request;
 	}
 
@@ -31,13 +31,12 @@ class ApiPresenter implements IPresenter
 		$url = $this->request->getUrl();
 		$url = substr($url->getPath(), strlen($url->getScriptPath()));
 
-		$request = Psr7ServerRequestFactory::fromNette($this->request)
+		$psrRequest = Psr7ServerRequestFactory::fromNette($this->request)
 			->withUri(new Psr7Uri($url));
 
-		$response = new Psr7Response();
-		$response = $this->dispatcher->dispatch($request, $response);
-
-		return new ApiResponse($response);
+		return new CallbackResponse(function () use ($psrRequest): void {
+			$this->application->runWith($psrRequest);
+		});
 	}
 
 }
