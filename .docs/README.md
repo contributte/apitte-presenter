@@ -1,45 +1,51 @@
-# Apitte/Presenter
+# Apitte Presenter
 
-## Content
+Integrate [Apitte](https://github.com/apitte/core) into [nette/routing](https://github.com/nette/routing) with a presenter. 
 
-- [Installation - how to register an extension](#installation)
-- [Configuration - all options](#configuration)
+> Usage of that package is not recommended as it requires unnecessary conversion of nette request into psr-7 request.
+> It also adds headers from nette response configuration which are usually mean for UI, not an API.
 
-## Installation
+> Presenter is currently incompatible with [middlewares](https://github.com/apitte/middlewares).
 
-Simpliest way to register this extension is via [Nette\DI\CompilerExtension](https://api.nette.org/2.4/Nette.DI.CompilerExtension.html).
+## Setup
 
-```
+First of all, setup [core](https://github.com/apitte/core) package.
+
+Install `apitte/presenter`
+
+```bash
 composer require apitte/presenter
 ```
 
-## Configuration
+Configure presenter mapping
 
 ```yaml
 application:
-	mapping:
-		...
-		Apitte: Apitte\Presenter\*Presenter
+    mapping:
+        Apitte: Apitte\Presenter\*Presenter
 ```
 
-### Router
-
-You should prepend `ApiRoute` to your router. Therefor you can reach your API at `<projecc>/api`.s
+Prepend `ApiRoute` to your router. Therefore you can reach your API at `<project>/api`.
 
 ```php
+namespace App\Router;
+
+use Apitte\Presenter\ApiRoute;
 use Nette\Application\IRouter;
 use Nette\StaticClass;
 
 class RouterFactory
 {
-	use StaticClass;
+    use StaticClass;
 
-	public static function createRouter(): IRouter
-	{
-		$router = new RouteList;
-		$router[] = new ApiRoute('api');
-		$router[] = new Route('<presenter>/<action>', 'Homepage:default');
-		return $router;
-	}
+    public static function createRouter(): IRouter
+    {
+        $router = new RouteList;
+        $router[] = new ApiRoute('api');
+        $router[] = new Route('<presenter>/<action>', 'Homepage:default');
+        return $router;
+    }
 }
 ```
+
+In `index.php` drop `Apitte\Core\Application\IApplication` and keep `Nette\Application\Application` only.
