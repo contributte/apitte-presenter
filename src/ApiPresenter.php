@@ -3,6 +3,7 @@
 namespace Apitte\Presenter;
 
 use Apitte\Core\Application\IApplication;
+use Apitte\Core\Http\ApiRequest;
 use Contributte\Psr7\Psr7ServerRequestFactory;
 use Contributte\Psr7\Psr7Uri;
 use Nette\Application\IPresenter;
@@ -33,6 +34,7 @@ class ApiPresenter implements IPresenter
 
 		$psrRequest = Psr7ServerRequestFactory::fromNette($this->request)
 			->withUri(new Psr7Uri($url));
+		$psrRequest = new ApiRequest($psrRequest);
 
 		return new CallbackResponse(function () use ($psrRequest): void {
 			$this->application->runWith($psrRequest);
