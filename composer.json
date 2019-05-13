@@ -16,8 +16,7 @@
   ],
   "require": {
     "php": ">= 7.1",
-    "apitte/core": "^0.5.0",
-    "contributte/psr7-http-message": "^0.5.0",
+    "apitte/core": "^0.6.0",
     "nette/application": "~2.4.9",
     "nette/http": "~2.4.7"
   },
@@ -41,7 +40,7 @@
   "prefer-stable": true,
   "extra": {
     "branch-alias": {
-      "dev-master": "0.5.x-dev"
+      "dev-master": "0.6.x-dev"
     }
   }
 }
