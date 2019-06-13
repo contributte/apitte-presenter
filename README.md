@@ -2,11 +2,6 @@
 
 Integrate [Apitte](https://github.com/apitte/core) into [nette/routing](https://github.com/nette/routing) with a presenter. 
 
-> Usage of that package is not recommended as it requires unnecessary conversion of nette request into psr-7 request.
-> It also adds headers from nette response configuration which are usually mean for UI, not an API.
-
-> Presenter is currently incompatible with [middlewares](https://github.com/apitte/middlewares)
-
 [![Build Status](https://img.shields.io/travis/apitte/presenter.svg?style=flat-square)](https://travis-ci.org/apitte/presenter)
 [![Code coverage](https://img.shields.io/coveralls/apitte/presenter.svg?style=flat-square)](https://coveralls.io/r/apitte/presenter)
 [![Licence](https://img.shields.io/packagist/l/apitte/presenter.svg?style=flat-square)](https://packagist.org/packages/apitte/presenter)
@@ -19,6 +14,10 @@ Integrate [Apitte](https://github.com/apitte/core) into [nette/routing](https://
 
 [![Join the chat](https://img.shields.io/gitter/room/apitte/apitte.svg?style=flat-square)](https://gitter.im/apitte/apitte)
 
+## Documentation
+
+- [Setup](.docs/README.md#setup)
+
 ## Version
 
 | State       | Version      | Branch   | PHP      | Composer                                        |
@@ -26,10 +25,6 @@ Integrate [Apitte](https://github.com/apitte/core) into [nette/routing](https://
 | development | `^0.6.0`     | `master` | `>= 7.1` | `minimum-stability: dev`, `prefer-stable: true` |
 | stable      | `^0.5.0`     | `master` | `>= 7.1` |                                                 |
 | stable      | `^0.3.0`     | `master` | `>= 5.6` |                                                 |
-
-## Documentation
-
-- [Setup](.docs/README.md#setup)
 
 ## Maintainers
 
