@@ -15,7 +15,7 @@ class ApiRoute extends Route
 	public function __construct(string $prefix, array $metadata = [], int $flags = 0)
 	{
 		if ($metadata === []) {
-			$metadata[Route::PRESENTER_KEY] = self::APITTE_MODULE;
+			$metadata['presenter'] = self::APITTE_MODULE;
 		}
 		parent::__construct(rtrim($prefix, '/') . '/<path .*>', $metadata, $flags);
 	}
