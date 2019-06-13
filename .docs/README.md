@@ -7,6 +7,10 @@ Integrate [Apitte](https://github.com/apitte/core) into [nette/routing](https://
 
 > Presenter is currently incompatible with [middlewares](https://github.com/apitte/middlewares).
 
+## Content
+
+- [Setup](setup)
+
 ## Setup
 
 First of all, setup [core](https://github.com/apitte/core) package.
