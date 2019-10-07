@@ -9,7 +9,7 @@ Integrate [Apitte](https://github.com/apitte/core) into [nette/routing](https://
 
 ## Content
 
-- [Setup](setup)
+- [Setup](#setup)
 
 ## Setup
 
