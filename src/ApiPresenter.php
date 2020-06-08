@@ -5,7 +5,6 @@ namespace Apitte\Presenter;
 use Apitte\Core\Application\IApplication;
 use Apitte\Core\Http\ApiRequest;
 use Contributte\Psr7\Psr7ServerRequestFactory;
-use Contributte\Psr7\Psr7Uri;
 use Contributte\Psr7\Psr7UriFactory;
 use Nette\Application\IPresenter;
 use Nette\Application\IResponse;
