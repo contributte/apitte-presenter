@@ -15,13 +15,13 @@
     }
   ],
   "require": {
-    "php": "^7.2",
-    "apitte/core": "^0.7.0",
+    "php": ">=7.2",
+    "apitte/core": "~0.7",
     "nette/application": "~3.0.0",
     "nette/http": "~3.0.1"
   },
   "require-dev": {
-    "ninjify/nunjuck": "^0.2.0",
+    "ninjify/nunjuck": "^0.4.0",
     "ninjify/qa": "^0.8.0",
     "phpstan/extension-installer": "^1.0",
     "phpstan/phpstan-deprecation-rules": "^0.11",
@@ -41,7 +41,7 @@
   "prefer-stable": true,
   "extra": {
     "branch-alias": {
-      "dev-master": "0.7.x-dev"
+      "dev-master": "0.8.x-dev"
     }
   }
 }
