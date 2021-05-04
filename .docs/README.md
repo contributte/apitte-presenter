@@ -1,6 +1,6 @@
 # Apitte Presenter
 
-Integrate [Apitte](https://github.com/apitte/core) into [nette/routing](https://github.com/nette/routing) with a presenter. 
+Integrate [Apitte](https://github.com/apitte/core) into [nette/routing](https://github.com/nette/routing) with a presenter.
 
 > Usage of that package is not recommended as it requires unnecessary conversion of nette request into psr-7 request.
 > It also adds headers from nette response configuration which are usually mean for UI, not an API.
@@ -23,7 +23,7 @@ composer require apitte/presenter
 
 Configure presenter mapping
 
-```yaml
+```neon
 application:
     mapping:
         Apitte: Apitte\Presenter\*Presenter
