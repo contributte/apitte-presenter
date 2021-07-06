@@ -15,8 +15,8 @@
     }
   ],
   "require": {
-    "php": ">=7.2",
-    "apitte/core": "~0.7",
+    "php": ">=7.3",
+    "apitte/core": "~0.7 || ~0.8",
     "nette/application": "^3.0.0",
     "nette/http": "^3.0.1"
   },
