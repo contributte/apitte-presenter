@@ -20,7 +20,7 @@ Website ğŸš€ <a href="https://contributte.org">contributte.org</a> | Contact ğŸ‘
 
 ## Usage
 
-To install the latest version of `apitte/presenter` use [Composer](https://getcomposer.com).
+To install the latest version of `apitte/presenter` use [Composer](https://getcomposer.org).
 
 ```bash
 composer require apitte/presenter
